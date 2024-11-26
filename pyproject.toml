@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "management-films-service"
+version = "0.1.0"
+description = ""
+authors = ["yuramishin <robothot@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.5"
+alembic = "^1.14.0"
+sqlalchemy = "^2.0.36"
+dynaconf = "^3.2.6"
+ruff = "^0.8.0"
+mypy = "^1.13.0"
+asyncpg = "^0.30.0"
+uvicorn = "^0.32.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
