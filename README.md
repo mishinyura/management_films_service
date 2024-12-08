@@ -5,8 +5,6 @@
 
 <a href="https://mipt.ru" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/ru/2/27/%D0%9B%D0%BE%D0%B3%D0%BE_%D0%9C%D0%A4%D0%A2%D0%98.png?20180927154454" alt="MIPT logo" height="101" width="150"/></a>
 
-<a href="https://drawsql.app/teams/robot-1/diagrams/films-service" target="blank"><img align="center" src="https://a.fsdn.com/allura/s/drawsql/icon?99f7437d1b6beae286830cfd95339103661d5ec722e44af00dd516341d59941a?&w=148" alt="DRAW SQL logo" height="101" width="150"/></a>
-
 ### Команда проекта, студенты 1-го курса магистратуры МФТИ "Разрабортка IT продукта":
 - Мишин Юрий
 - Михайлов Иван
@@ -16,6 +14,8 @@
 - Сердюков Георгий
 
 MIRO доска проекта: <a href="https://miro.com/welcomeonboard/VVFGNFBYaVlyeVQ5STN0UnhhWk5yREcxcHlmSUZpbGJHQ0VvazZYMEYrOUVNVzg5cUF5SnFPSmttSVYwbm9KMlk2aSt4OWVSRXVDdFFSSXhubnR5OUg3U2U0ZzFFNHB5bFZrclJBMnhxTmZGYXMvLzdMMTNLZU8xd0liT3ljbDIhZQ==?share_link_id=185867484290"><img align="center" src="https://cdn.worldvectorlogo.com/logos/miro-2.svg" alt="MIRO logo" height="100" width="100"/></a>
+
+DrawSQL архитектура БД: <a href="https://drawsql.app/teams/robot-1/diagrams/films-service" target="blank"><img align="center" src="https://a.fsdn.com/allura/s/drawsql/icon?99f7437d1b6beae286830cfd95339103661d5ec722e44af00dd516341d59941a?&w=148" alt="DRAW SQL logo" height="101" width="150"/></a>
 
 ### Техническое задание проекта
 Необходимо создать асинхронный RESTful API сервис, который позволяет пользователям регистрироваться, аутентифицироваться и управлять списком своих избранных фильмов.
