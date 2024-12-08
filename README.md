@@ -5,6 +5,8 @@
 
 <a href="https://mipt.ru" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/ru/2/27/%D0%9B%D0%BE%D0%B3%D0%BE_%D0%9C%D0%A4%D0%A2%D0%98.png?20180927154454" alt="MIPT logo" height="101" width="150"/></a>
 
+<a href="https://drawsql.app/teams/robot-1/diagrams/films-service" target="blank"><img align="center" src="https://a.fsdn.com/allura/s/drawsql/icon?99f7437d1b6beae286830cfd95339103661d5ec722e44af00dd516341d59941a?&w=148" alt="DRAW SQL logo" height="101" width="150"/></a>
+
 ### Команда проекта, студенты 1-го курса магистратуры МФТИ "Разрабортка IT продукта":
 - Мишин Юрий
 - Михайлов Иван
