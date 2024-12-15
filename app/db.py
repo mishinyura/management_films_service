@@ -7,7 +7,7 @@ from app.config import settings
 engine = create_async_engine(
     url=settings.db.db_url,
     echo=True,
-    pollclass=NullPool,
+    poolclass=NullPool,
 )
 
 async_session_maker = async_sessionmaker(
