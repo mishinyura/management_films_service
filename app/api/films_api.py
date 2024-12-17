@@ -7,12 +7,12 @@ from app.schemas.film_schemas import FilmSchema
 from app.services.film_service import film_service
 
 
-films_router = APIRouter(tags=['films'])
+films_router = APIRouter(tags=["films"])
 
 
 # Ищет фильмы по названию, используя эндпойнт:
 # GET /api/v2.1/films/search-by-keyword
-@films_router.get('films/search-by-keyword', response_model=FilmSchema | None)
+@films_router.get("films/search-by-keyword", response_model=FilmSchema | None)
 async def get_film(film_name: str):
     film = await film_service.get_film_by_name(film_name)
     if not film:
@@ -22,7 +22,7 @@ async def get_film(film_name: str):
 
 # Получает подробную информацию о фильме по его Kinopoisk ID, используя эндпойнт:
 # GET /api/v2.2/films/{kinopoisk_id}
-@films_router.get('films/kinopoisk_id', response_model=FilmSchema | None)
+@films_router.get("films/kinopoisk_id", response_model=FilmSchema | None)
 async def get_details(kinopoisk_id: str):
     details = await film_service.get_film_details(kinopoisk_id)
     if not details:

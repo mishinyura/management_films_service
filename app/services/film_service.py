@@ -1,10 +1,8 @@
 from app.schemas.film_schemas import FilmSchema
-from dotenv import load_dotenv
-import os
+from app.config import settings
 
-load_dotenv()
 
-api_key = os.getenv("API_KEY")
+api_key = settings.app.app_api_key
 
 if not api_key:
     raise ValueError("API_KEY is not set")
