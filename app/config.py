@@ -7,14 +7,11 @@ class DBConfig(BaseModel):
     db_user: str
     db_password: str
     db_host: str
-    db_port: str
+    db_port: int
 
     @property
     def db_url(self):
-        data = "postgresql+asyncpg://{0}:{1}@{2}:{3}/{4}".format(
-            self.db_user, self.db_password, self.db_host, self.db_port, self.db_name
-        )
-        return data
+        return f"postgresql+asyncpg://{self.db_user}:{self.db_password}@{self.db_host}:{self.db_port}/{self.db_name}"
 
 
 class APPConfig(BaseModel):
@@ -23,6 +20,7 @@ class APPConfig(BaseModel):
     app_name: str
     app_host: str
     app_mount: str
+    app_key: str
 
 
 class Settings(BaseModel):
