@@ -11,7 +11,12 @@ if not api_key:
 class FilmService:
 
     def __init__(self):
-        pass
+        self.user_agent = {
+            'name:': settings.app.app_name,
+            'version': settings.app.app_version,
+            'stack': 'python',
+            'method': 'test'
+        }
 
     async def get_film_by_name(self, name: str) -> FilmSchema:
         # вход в кинопоиск

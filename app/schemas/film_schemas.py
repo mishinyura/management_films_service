@@ -1,5 +1,5 @@
 from pydantic import BaseModel
 
 
-class FilmSchema(BaseModel):
+class FilmResponseSchema(BaseModel):
     kinopoisk_id: str
