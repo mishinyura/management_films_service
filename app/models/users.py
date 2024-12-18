@@ -13,3 +13,17 @@ class User(Base):
     username: Mapped[str] = mapped_column(String(256), nullable=False, unique=True)
     password: Mapped[bool] = mapped_column(String(256), nullable=False)
     films: Mapped[bool] = mapped_column(String(256), ForeignKey('films.film_id'), nullable=False)
+
+    def __repr__(self):
+        return (
+            f"UUID(user_id={self.uuid!r}, "
+            f"username={self.username!r}, "
+            f"films={self.films!r}, "
+        )
+
+    def __str__(self):
+        return (
+            f"UUID(user_id={self.uuid!r}, "
+            f"username={self.username!r}, "
+            f"films={self.films!r}, "
+        )
