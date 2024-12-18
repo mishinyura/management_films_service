@@ -10,7 +10,7 @@ from app.models.base import BaseModel
 class User:
     __tablename__ = 'users'
 
-    uuid: Mapped[UUID] = mapped_column(U_UUID(as_uuid=True), default=uuid4, unique=True)
+    uuid: Mapped[UUID] = mapped_column(U_UUID(as_uuid=True), primary_key=True, default=uuid4, unique=True)
     username: Mapped[str] = mapped_column(String(256), nullable=False, unique=True)
     password: Mapped[bool] = mapped_column(String(256), nullable=False)
     films: Mapped[bool] = mapped_column(String(256), ForeignKey('films.film_id'), nullable=False)
