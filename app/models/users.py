@@ -1,16 +1,30 @@
 from uuid import UUID, uuid4
-from sqlalchemy import DateTime, String
+from sqlalchemy import String, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy.dialects.postgresql import UUID as U_UUID
-from datetime import datetime
 
 from app.db import Base
+from app.models.base import BaseModel
 
 
-class User(Base):
+class User:
     __tablename__ = 'users'
 
-    uuid:               Mapped[UUID] = mapped_column(U_UUID(as_uuid=True), primary_key=True, default=uuid4)
-    username:           Mapped[str] = mapped_column(String(256), nullable=False, unique=True)
-    created_at:         Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.now())
-    hashed_password:    Mapped[bool] = mapped_column(String(256), nullable=False)
+    uuid: Mapped[UUID] = mapped_column(U_UUID(as_uuid=True), primary_key=True, default=uuid4, unique=True)
+    username: Mapped[str] = mapped_column(String(256), nullable=False, unique=True)
+    password: Mapped[bool] = mapped_column(String(256), nullable=False)
+    films: Mapped[bool] = mapped_column(String(256), ForeignKey('films.film_id'), nullable=False)
+
+    def __repr__(self):
+        return (
+            f"UUID(user_id={self.uuid!r}, "
+            f"username={self.username!r}, "
+            f"films={self.films!r}, "
+        )
+
+    def __str__(self):
+        return (
+            f"UUID(user_id={self.uuid!r}, "
+            f"username={self.username!r}, "
+            f"films={self.films!r}, "
+        )
