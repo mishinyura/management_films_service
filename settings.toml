@@ -4,7 +4,6 @@ app_version=''
 app_name=''
 app_host=''
 app_mount=''
-app_api_key='357465a3-07cb-49c9-8619-7d2127741d69'
 
 [db_settings]
 db_name=''
@@ -12,3 +11,7 @@ db_user=''
 db_password=''
 db_host=''
 db_port=''
+
+[kinopoisk_settings]
+kinopoinsk_api_key='357465a3-07cb-49c9-8619-7d2127741d69'
+kinopoinsk_base_url='https://kinopoiskapiunofficial.tech/documentation/api/v2.2/films/'

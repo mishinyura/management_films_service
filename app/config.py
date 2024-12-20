@@ -1,5 +1,5 @@
 from dynaconf import Dynaconf
-from pydantic import BaseModel
+from pydantic import BaseModel, HttpUrl
 
 
 class DBConfig(BaseModel):
@@ -23,14 +23,20 @@ class APPConfig(BaseModel):
     app_name: str
     app_host: str
     app_mount: str
-    app_api_key: str
+
+
+class KinopoiskConfig(BaseModel):
+    kinopoinsk_api_key: str
+    kinopoinsk_base_url: HttpUrl
 
 
 class Settings(BaseModel):
     app: APPConfig
     db: DBConfig
+    kinopoisk: KinopoiskConfig
+
 
 
 dyna_settings = Dynaconf(settings_files=["settings.toml"])
 
-settings = Settings(app=dyna_settings["app_settings"], db=dyna_settings["db_settings"])
+settings = Settings(app=dyna_settings["app_settings"], db=dyna_settings["db_settings"], kinopoisk=dyna_settings["kinopoisk_settings"])
