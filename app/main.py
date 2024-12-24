@@ -7,12 +7,12 @@ from app.api.routes import api_router
 
 def run_app():
     app = FastAPI(docs_url='/docs')
+    app.include_router(api_router, prefix='')
     app.mount(settings.app.app_mount, get_app())
-    app.include_router(api_router)
     uvicorn.run(
         app,
         host=settings.app.app_host,
         port=settings.app.app_port,
-        log_config=None
+        log_config=None,
     )
 

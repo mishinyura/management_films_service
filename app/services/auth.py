@@ -33,6 +33,9 @@ def get_password_hash(password) -> str:
 
 
 async def create_user(db: AsyncSession, user: UserCreate) -> User:
+    existing_user = await db.execute(select(User).where(User.username == user.username))
+    if existing_user.scalar():
+        raise HTTPException(status_code=400, detail="Username already registered")
     db_user = User(username=user.username, hashed_password=get_password_hash(user.password))
     db.add(db_user)
     await db.commit()

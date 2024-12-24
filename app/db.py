@@ -1,3 +1,5 @@
+import asyncio
+
 from sqlalchemy import NullPool
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase
@@ -24,3 +26,5 @@ async def get_session():
 
 class Base(DeclarativeBase):
     pass
+
+

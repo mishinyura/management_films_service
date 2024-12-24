@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <input type="submit" value="Login">
+    </form>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const response = await fetch("/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: new URLSearchParams({ username, password }).toString(),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert("Login successful! Access token: " + data.access_token);
+            } else {
+                alert("Login failed!");
+            }
+        });
+    </script>
+</body>
+</html>
