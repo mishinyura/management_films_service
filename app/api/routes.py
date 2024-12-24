@@ -1,11 +1,10 @@
-from fastapi import APIRouter
-from app.api.login import router as login
+from app.api.auth_api import auth_router
 from app.api.films_api import films_router
+from app.api.misc_api import misc_router
 
-
-api_router = APIRouter()
-api_router.include_router(login)
 
 ROUTES = {
-    "/films": films_router,
+    "": misc_router,
+    "/auth": auth_router,
+    "/films": films_router
 }

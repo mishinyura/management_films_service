@@ -23,11 +23,21 @@ class APPConfig(BaseModel):
     app_key: str
 
 
+class KinopoiskConfig(BaseModel):
+    kinopoinsk_api_key: str
+    kinopoinsk_base_url: str
+
+
 class Settings(BaseModel):
     app: APPConfig
     db: DBConfig
+    kp: KinopoiskConfig
 
 
 dyna_settings = Dynaconf(settings_files=["settings.toml"])
 
-settings = Settings(app=dyna_settings["app_settings"], db=dyna_settings["db_settings"])
+settings = Settings(
+    app=dyna_settings["app_settings"],
+    db=dyna_settings["db_settings"],
+    kp=dyna_settings["kinopoisk_settings"]
+)

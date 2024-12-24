@@ -9,14 +9,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import joinedload, selectinload
 
 
-from app.exceptions import SqlException, DuplicateException
-from app.models.companies_model import Company
-from app.models.films_model import Film
-from app.models.users_model import User
+from app.models.film_model import Film
+from app.models.user_model import User
 from app.repositories.film_repo import film_repo
 # from app.repositories.company_repo import company_repo
-from app.schemas.company_schemas import CompanySchema
-from app.schemas.film_schemas import FilmSchema
+# from app.schemas.film_schemas import FilmSchema
 
 from sqlalchemy import select
 
