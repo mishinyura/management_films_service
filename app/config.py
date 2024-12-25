@@ -21,6 +21,7 @@ class APPConfig(BaseModel):
     app_host: str
     app_mount: str
     app_key: str
+    api_key: str
 
 
 class Settings(BaseModel):

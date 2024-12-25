@@ -1,0 +1,20 @@
+CREATE USER app_user WITH PASSWORD 'PASSWORD';
+
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE SCHEMA IF NOT EXISTS service;
+
+CREATE TABLE service.users (
+    uuid UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    username VARCHAR(256) NOT NULL UNIQUE,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    hashed_password VARCHAR(256) NOT NULL
+);
+
+CREATE TABLE service.user_films (
+    user_uuid UUID REFERENCES service.users(uuid) ON DELETE CASCADE,
+    film_id INTEGER NOT NULL
+);
+
+GRANT USAGE ON SCHEMA service TO app_user;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA service TO app_user;

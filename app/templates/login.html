@@ -15,8 +15,10 @@
         <br><br>
         <input type="submit" value="Login">
     </form>
-
+    <button id="protectedButton" style="display: none;">Go to Protected</button>
     <script>
+        let accessToken = '';
+
         document.getElementById("loginForm").addEventListener("submit", async (event) => {
             event.preventDefault();
 
@@ -33,9 +35,26 @@
 
             if (response.ok) {
                 const data = await response.json();
-                alert("Login successful! Access token: " + data.access_token);
+                accessToken = data.access_token;
+                alert("Login successful! Access token: " + accessToken);
+                document.getElementById("protectedButton").style.display = "block"; // Показываем кнопку
             } else {
                 alert("Login failed!");
+            }
+        });
+        document.getElementById("protectedButton").addEventListener("click", async () => {
+            const response = await fetch("/profile", {
+                method: "GET",
+                headers: {
+                    "Authorization": "Bearer " + accessToken,
+                },
+            });
+
+            if (response.ok) {
+                const html = await response.text();
+                document.body.innerHTML = html;
+            } else {
+                alert("Failed to access protected route!");
             }
         });
     </script>

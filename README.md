@@ -15,7 +15,7 @@
 
 MIRO доска проекта: <a href="https://miro.com/welcomeonboard/VVFGNFBYaVlyeVQ5STN0UnhhWk5yREcxcHlmSUZpbGJHQ0VvazZYMEYrOUVNVzg5cUF5SnFPSmttSVYwbm9KMlk2aSt4OWVSRXVDdFFSSXhubnR5OUg3U2U0ZzFFNHB5bFZrclJBMnhxTmZGYXMvLzdMMTNLZU8xd0liT3ljbDIhZQ==?share_link_id=185867484290"><img align="center" src="https://cdn.worldvectorlogo.com/logos/miro-2.svg" alt="MIRO logo" height="100" width="100"/></a>
 
-DrawSQL архитектура БД: <a href="https://drawsql.app/teams/robot-1/diagrams/films-service" target="blank"><img align="center" src="https://a.fsdn.com/allura/s/drawsql/icon?99f7437d1b6beae286830cfd95339103661d5ec722e44af00dd516341d59941a?&w=148" alt="DRAW SQL logo" height="101" width="150"/></a>
+DrawSQL архитектура БД: <a href="https://drawsql.app/teams/robot-1/diagrams/films-service" target="blank"><img align="center" src="https://a.fsdn.com/allura/s/drawsql/icon?99f7437d1b6beae286830cfd95339103661d5ec722e44af00dd516341d59941a?&w=148" alt="DRAW SQL logo" height="101" width="120"/></a>
 
 ### Техническое задание проекта
 Необходимо создать асинхронный RESTful API сервис, который позволяет пользователям регистрироваться, аутентифицироваться и управлять списком своих избранных фильмов.
@@ -108,3 +108,21 @@ GET /movies/favorites
 - Используемые технологии: FastAPI, Pydantic, SQLAlchemy, alembic, PostgreSQL.
 - Система логирования: Loguru | Structlog: Sentry.
 - Система мониторинга: Prometheus | Statsd: Grafana.
+
+
+---
+## Запуск приложения
+Перед запуском необходимо заполнить своими данными settings.toml 
+А также поднять локальную базу из app.db_create.sql
+
+Запуск через докер
+```bash
+docker-compose build
+docker-compose up
+```
+
+Запуск через команды
+
+```bash
+poetry run run_app
+```
