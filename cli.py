@@ -19,5 +19,4 @@ def run(
         case Apps.api:
             run_api_app()
 
-
 cli()

@@ -1,17 +1,18 @@
 [app_settings]
-app_port=8000
-app_version='0.0.1'
-app_name='films_service'
-app_host='127.0.0.1'
-app_mount='/api/v1'
-app_key='films_service_key'
+app_port = 8000
+app_version = "1.0.0"
+app_name = "service"
+app_host = "127.0.0.1"
+app_mount = "/api/v1"
+app_key = 'testkey'
+
 
 [db_settings]
-db_name='films_service_db'
-db_user='postgres'
-db_password='boss'
-db_host='127.0.0.1'
-db_port=5433
+db_name = "films_service_db"
+db_user = "postgres"
+db_password = "boss"
+db_host = "localhost"
+db_port = 5432
 
 [kinopoisk_settings]
 kinopoinsk_api_key='357465a3-07cb-49c9-8619-7d2127741d69'
