@@ -1,10 +1,12 @@
 from uuid import UUID, uuid4
+
 from sqlalchemy import DateTime, String, ForeignKey, Integer
 from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase, relationship
+
 from sqlalchemy.dialects.postgresql import UUID as U_UUID
-from datetime import datetime
 
 from app.db import Base
+from app.models.base import BaseModel
 
 
 class BaseUsers(DeclarativeBase):
@@ -32,4 +34,3 @@ class UserFilm(BaseUsers):
     film_id:      Mapped[int] = mapped_column(Integer, primary_key=True)
 
     user:         Mapped['User'] = relationship(back_populates='films')
-

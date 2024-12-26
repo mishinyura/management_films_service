@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+
 from app.api.login import login_router
 from app.api.movies import movies_router
 from loguru import logger
